@@ -15,9 +15,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
-import org.bukkit.event.player.PlayerEditBookEvent;
-import org.bukkit.event.player.PlayerItemConsumeEvent;
-import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.event.player.*;
 
 public class PlayerEventHandler implements Listener
 {
@@ -40,6 +38,12 @@ public class PlayerEventHandler implements Listener
                 }
             }
         }
+    }
+
+    @EventHandler
+    public void OnUseComposter(PlayerInteractEvent event)
+    {
+
     }
 
     @EventHandler

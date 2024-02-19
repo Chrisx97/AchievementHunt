@@ -18,6 +18,7 @@ import me.chrisx97.achievementhunt.goals.eatgoals.EatGlowberryGoal;
 import me.chrisx97.achievementhunt.goals.eatgoals.EatRabbitStewGoal;
 import me.chrisx97.achievementhunt.goals.interactiongoals.HitGolemWithRoseGoal;
 import me.chrisx97.achievementhunt.goals.interactiongoals.MilkCowGoal;
+import me.chrisx97.achievementhunt.goals.interactiongoals.UseComposterGoal;
 import me.chrisx97.achievementhunt.goals.killgoals.KillSkeletonWithBoneGoal;
 import me.chrisx97.achievementhunt.goals.killgoals.KillSnowGolemGoal;
 import me.chrisx97.achievementhunt.goals.killgoals.KillWitchGoal;
@@ -66,6 +67,7 @@ public final class AchievementHunt extends JavaPlugin
 
         GameManager.GetInstance().AddGoal(new HitGolemWithRoseGoal());
         GameManager.GetInstance().AddGoal(new MilkCowGoal());
+        GameManager.GetInstance().AddGoal(new UseComposterGoal());
 
         GameManager.GetInstance().AddGoal(new KillSkeletonWithBoneGoal());
         GameManager.GetInstance().AddGoal(new KillSnowGolemGoal());

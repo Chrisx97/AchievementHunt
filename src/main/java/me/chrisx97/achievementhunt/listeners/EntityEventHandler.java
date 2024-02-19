@@ -6,8 +6,10 @@ import me.chrisx97.achievementhunt.goals.base.BreedGoal;
 import me.chrisx97.achievementhunt.goals.base.EntityInteractGoal;
 import me.chrisx97.achievementhunt.goals.base.HitEntityGoal;
 import me.chrisx97.achievementhunt.goals.base.KillGoal;
+import me.chrisx97.achievementhunt.goals.interactiongoals.UseComposterGoal;
 import me.chrisx97.achievementhunt.utils.AchievementGUI;
 import me.chrisx97.achievementhunt.utils.ItemUtil;
+import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -32,8 +34,30 @@ public class EntityEventHandler implements Listener
         if (ItemUtil.Instance.UsedTrackingCompass(event.getPlayer().getInventory().getItemInMainHand()))
         {
             AchievementGUI.OpenGUI(event.getPlayer());
+            return;
         }
+
+        if (event.getClickedBlock() != null)
+        {
+            if (event.getClickedBlock().getType() == Material.COMPOSTER)
+            {
+                if (ItemUtil.Instance.IsCompostable(event.getPlayer().getInventory().getItemInMainHand().getType()))
+                {
+                    for (Goal goal : GameManager.GetInstance().GetActiveGoalList())
+                    {
+                        if (goal instanceof UseComposterGoal)
+                        {
+                            GameManager.GetInstance().TryClaimGoal(event.getPlayer(), goal);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
     }
+
+
 
     //Interact Event
     @EventHandler
@@ -41,6 +65,8 @@ public class EntityEventHandler implements Listener
     {
         //Only checking main hand
         if (event.getHand() != EquipmentSlot.HAND) return;
+
+
 
         //Loop through the goal list
         List<Goal> goalList = GameManager.GetInstance().GetActiveGoalList();

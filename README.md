@@ -47,6 +47,8 @@ Hit an Iron Golem with a Rose,
 
 Milk a Cow, 
 
+Use a Composter,
+
 Die to a Cactus, 
 
 Empty your hunger bar, 
