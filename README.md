@@ -37,7 +37,9 @@ Collect a full set of Diamond Tools,
 
 Collect a full set of Golden Tools, 
 
-Eat a Glow Berry, Eat Rabbit Stew, 
+Eat a Glow Berry, 
+
+Eat Rabbit Stew, 
 
 Hit an Iron Golem with a Rose, 
 
