@@ -90,7 +90,7 @@ public final class AchievementHunt extends JavaPlugin
     {
         this.getCommand("Start").setExecutor(new StartCommand());
         this.getCommand("StopGame").setExecutor(new StopCommand());
-        this.getCommand("StopGame").setExecutor(new GoalsCommand());
+        this.getCommand("Goals").setExecutor(new GoalsCommand());
         this.getCommand("AchievementHunt").setExecutor(new AchievementHuntCommand());
     }
 
