@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -26,6 +27,7 @@ public class AchievementGUI implements Listener
 
     public static void OpenGUI(final HumanEntity ent)
     {
+        ent.closeInventory();
         ent.openInventory(menu);
     }
 
