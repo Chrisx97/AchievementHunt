@@ -91,10 +91,4 @@ public final class AchievementHunt extends JavaPlugin
         this.getCommand("Goals").setExecutor(new GoalsCommand());
         this.getCommand("AchievementHunt").setExecutor(new AchievementHuntCommand());
     }
-
-    @Override
-    public void onDisable()
-    {
-        // Plugin shutdown logic
-    }
 }
