@@ -11,7 +11,7 @@ Commands:
 
 /goals - Opens the goals GUI
 
-
+[Game]
 
 When the game starts, 20 random goals are selected and added to the /goals GUI
 
