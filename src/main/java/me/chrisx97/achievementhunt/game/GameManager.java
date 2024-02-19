@@ -4,6 +4,7 @@ import me.chrisx97.achievementhunt.goals.base.CollectItemSetGoal;
 import me.chrisx97.achievementhunt.goals.base.Goal;
 import me.chrisx97.achievementhunt.goals.base.CollectItemGoal;
 import me.chrisx97.achievementhunt.utils.AchievementGUI;
+import me.chrisx97.achievementhunt.utils.HexFormat;
 import me.chrisx97.achievementhunt.utils.ItemUtil;
 import me.chrisx97.achievementhunt.utils.LoggerUtil;
 import org.bukkit.*;
@@ -146,6 +147,13 @@ public class GameManager
                 goal.SetCompletion(true);
                 AchievementGUI.InitializeItems();
                 LoggerUtil.Instance().Broadcast("&aPlayer &b" + player.getName() + " &ahas completed &6" + goal.GetName());
+                if (goalsCompleted == 1)
+                {
+                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), player.getName() + " has completed " + goalsCompleted + " goal", 20, 80, 20);
+                } else
+                {
+                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), player.getName() + " has completed " + goalsCompleted + " goals", 20, 80, 20);
+                }
             }
         }
         return true;

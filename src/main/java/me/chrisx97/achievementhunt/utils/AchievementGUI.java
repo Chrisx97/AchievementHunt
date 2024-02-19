@@ -112,9 +112,10 @@ public class AchievementGUI implements Listener
     @EventHandler
     public void OnInventoryClick(final InventoryClickEvent e)
     {
-        if (!e.getInventory().equals(menu)) return;
-
-        e.setCancelled(true);
+        if (e.getInventory().equals(menu))
+        {
+            e.setCancelled(true);
+        }
     }
 
     // Cancel dragging in our inventory
