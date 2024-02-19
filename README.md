@@ -14,20 +14,37 @@ Current List of Goals:
 
 
 Harvest Sugar Cane, 
+
 Break a Diamond Ore, 
+
 Break an Iron Ore, 
+
 Mine a Mob Spawner, 
+
 Break Obsidian, 
+
 Breed Chickens, 
+
 Breed Cows, 
+
 Collect Cake, 
+
 Collect an Enchanted Golden Apple, 
+
 Collect a Heart of The Sea, 
+
 Collect a full set of Diamond Tools, 
+
 Collect a full set of Golden Tools, 
+
 Eat a Glow Berry, Eat Rabbit Stew, 
+
 Hit an Iron Golem with a Rose, 
+
 Milk a Cow, Die to a Cactus, 
+
 Empty your hunger bar, 
+
 Catch a fish with a rod, 
+
 Write a book.
