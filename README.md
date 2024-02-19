@@ -43,7 +43,9 @@ Eat Rabbit Stew,
 
 Hit an Iron Golem with a Rose, 
 
-Milk a Cow, Die to a Cactus, 
+Milk a Cow, 
+
+Die to a Cactus, 
 
 Empty your hunger bar, 
 
