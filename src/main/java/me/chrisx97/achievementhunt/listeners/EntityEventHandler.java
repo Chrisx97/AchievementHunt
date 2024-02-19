@@ -26,39 +26,6 @@ import java.util.List;
 
 public class EntityEventHandler implements Listener
 {
-
-    @EventHandler
-    public void OnInteract(PlayerInteractEvent event)
-    {
-        if (event.getHand() != EquipmentSlot.HAND) return;
-        if (ItemUtil.Instance.UsedTrackingCompass(event.getPlayer().getInventory().getItemInMainHand()))
-        {
-            AchievementGUI.OpenGUI(event.getPlayer());
-            return;
-        }
-
-        if (event.getClickedBlock() != null)
-        {
-            if (event.getClickedBlock().getType() == Material.COMPOSTER)
-            {
-                if (ItemUtil.Instance.IsCompostable(event.getPlayer().getInventory().getItemInMainHand().getType()))
-                {
-                    for (Goal goal : GameManager.GetInstance().GetActiveGoalList())
-                    {
-                        if (goal instanceof UseComposterGoal)
-                        {
-                            GameManager.GetInstance().TryClaimGoal(event.getPlayer(), goal);
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-
-
-
     //Interact Event
     @EventHandler
     public void OnEntityInteract(PlayerInteractEntityEvent event)

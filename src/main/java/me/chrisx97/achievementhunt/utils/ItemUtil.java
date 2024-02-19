@@ -64,8 +64,8 @@ public class ItemUtil
             meta.setDisplayName(HexFormat.format("&cPlayer Tracker"));
             List<String> lore = new ArrayList<>();
             lore.add("");
-            lore.add(HexFormat.format("&6Right Click &7to open"));
-            lore.add(HexFormat.format("&7the goals GUI."));
+            lore.add(HexFormat.format("&cRight Click &7to open"));
+            lore.add(HexFormat.format("&7the &6Goals &7GUI."));
             meta.setLore(lore);
             meta.addEnchant(Enchantment.LURE, 1, false);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);

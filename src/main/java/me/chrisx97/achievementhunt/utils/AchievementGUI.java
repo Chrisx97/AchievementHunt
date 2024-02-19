@@ -7,6 +7,7 @@ import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
@@ -127,4 +128,14 @@ public class AchievementGUI implements Listener
             e.setCancelled(true);
         }
     }
+
+    /*@EventHandler
+    public void OnCloseInventory(InventoryCloseEvent event)
+    {
+        //fix for weird edge case where dropping items after closing GUI causes it to re-appear?
+        if (event.getInventory().equals(menu))
+        {
+            menu.getViewers().remove(event.getPlayer());
+        }
+    }*/
 }
