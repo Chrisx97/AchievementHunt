@@ -38,7 +38,8 @@ public class HarvestSugarCaneGoal extends BlockCollectGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded when the player harvests &aSugar Cane&7.");
+        description.add("&7Awarded to the first");
+        description.add("&7player to harvest &aSugar Cane&7.");
         return description;
     }
 

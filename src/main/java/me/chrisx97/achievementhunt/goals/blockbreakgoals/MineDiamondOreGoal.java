@@ -38,7 +38,8 @@ public class MineDiamondOreGoal extends BlockCollectGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded when the player breaks &bDiamond Ore&7.");
+        description.add("&7Awarded when a player");
+        description.add("&7breaks &bDiamond Ore&7.");
         return description;
     }
 

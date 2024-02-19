@@ -41,7 +41,8 @@ public class MilkCowGoal extends EntityInteractGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for milking a cow.");
+        description.add("&7Awarded to the first");
+        description.add("&7player who milks a &fCow&7.");
         return description;
     }
 

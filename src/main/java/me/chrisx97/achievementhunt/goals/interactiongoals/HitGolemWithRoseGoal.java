@@ -38,7 +38,8 @@ public class HitGolemWithRoseGoal extends HitEntityGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for hitting an &fIron Golem &7with a &cPoppy&7.");
+        description.add("&7Awarded for hitting an");
+        description.add("&fIron Golem &7with a &cPoppy&7.");
         return description;
     }
 

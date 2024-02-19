@@ -37,7 +37,8 @@ public class FishingGoal extends Goal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for successfully fishing with a rod.");
+        description.add("&7Awarded for successfully");
+        description.add("&7fishing with a rod.");
         return description;
     }
 

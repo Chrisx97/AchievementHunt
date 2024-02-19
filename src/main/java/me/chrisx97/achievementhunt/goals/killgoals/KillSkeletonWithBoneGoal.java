@@ -39,7 +39,8 @@ public class KillSkeletonWithBoneGoal extends KillGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for killing a &fSkeleton &7with a &fBone&7.");
+        description.add("&7Awarded for killing a");
+        description.add("&fSkeleton &7with a &fBone&7.");
         return description;
     }
 

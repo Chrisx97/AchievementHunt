@@ -38,7 +38,8 @@ public class MineMobSpawnerGoal extends BlockCollectGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for breaking a &6Monster Spawner&7.");
+        description.add("&7Awarded for breaking");
+        description.add("&7a &6Monster Spawner&7.");
         return description;
     }
 

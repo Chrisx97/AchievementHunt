@@ -38,7 +38,8 @@ public class MineObsidianGoal extends BlockCollectGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded when the player breaks &5Obsidian&7.");
+        description.add("&7Awarded to the first");
+        description.add("&7player to break &5Obsidian&7.");
         return description;
     }
 

@@ -41,7 +41,8 @@ public class BreedChickensGoal extends BreedGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for breeding chickens.");
+        description.add("&7Awarded for breeding");
+        description.add("&9Chickens&7.");
         return description;
     }
 

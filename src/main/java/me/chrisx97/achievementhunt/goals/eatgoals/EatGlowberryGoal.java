@@ -40,7 +40,8 @@ public class EatGlowberryGoal extends EatGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for eating glowberries.");
+        description.add("&7Awarded for eating");
+        description.add("&eGlow Berries&7.");
         return description;
     }
 

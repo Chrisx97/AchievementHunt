@@ -39,7 +39,7 @@ public class EmptyHungerBarGoal extends Goal
     {
         List<String> description = new ArrayList<>();
         description.add("&7Awarded to the first player");
-        description.add("&7whos hunger drops to &6zero&7.");
+        description.add("&7whos hunger drops to &czero&7.");
         return description;
     }
 

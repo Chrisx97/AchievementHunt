@@ -2,8 +2,6 @@ package me.chrisx97.achievementhunt;
 
 import me.chrisx97.achievementhunt.commands.AchievementHuntCommand;
 import me.chrisx97.achievementhunt.commands.GoalsCommand;
-import me.chrisx97.achievementhunt.commands.StartCommand;
-import me.chrisx97.achievementhunt.commands.StopCommand;
 import me.chrisx97.achievementhunt.game.GameManager;
 import me.chrisx97.achievementhunt.goals.*;
 import me.chrisx97.achievementhunt.goals.blockbreakgoals.*;
@@ -90,8 +88,6 @@ public final class AchievementHunt extends JavaPlugin
     }
     private void RegisterCommands()
     {
-        this.getCommand("Start").setExecutor(new StartCommand());
-        this.getCommand("StopGame").setExecutor(new StopCommand());
         this.getCommand("Goals").setExecutor(new GoalsCommand());
         this.getCommand("AchievementHunt").setExecutor(new AchievementHuntCommand());
     }

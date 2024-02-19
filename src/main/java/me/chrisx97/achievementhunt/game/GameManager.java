@@ -87,13 +87,6 @@ public class GameManager
             playerData.put(player, new ArrayList<>());
             AchievementGUI.OpenGUI(player);
         }
-
-        int i = 0;
-        for (Goal goal : activeGoalList)
-        {
-            LoggerUtil.Instance().Broadcast("Goal " + i + ": " + goal.GetName());
-            i++;
-        }
     }
 
 

@@ -38,7 +38,7 @@ public class DieToCactusGoal extends Goal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for dying to cactus.");
+        description.add("&7Awarded for &cdying &7to &2Cactus&7.");
         return description;
     }
 

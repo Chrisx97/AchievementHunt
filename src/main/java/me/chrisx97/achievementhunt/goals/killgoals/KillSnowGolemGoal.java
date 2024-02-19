@@ -39,7 +39,8 @@ public class KillSnowGolemGoal extends KillGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for killing a &fSnow Golem&7.");
+        description.add("&7Awarded for killing");
+        description.add("&7a &fSnow Golem&7.");
         return description;
     }
 

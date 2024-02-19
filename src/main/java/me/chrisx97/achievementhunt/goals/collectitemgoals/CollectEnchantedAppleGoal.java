@@ -40,7 +40,8 @@ public class CollectEnchantedAppleGoal extends CollectItemGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for obtaining an &5Enchanted Golden Apple&7.");
+        description.add("&7Awarded for obtaining an");
+        description.add("&5Enchanted Golden Apple&7.");
         return description;
     }
 

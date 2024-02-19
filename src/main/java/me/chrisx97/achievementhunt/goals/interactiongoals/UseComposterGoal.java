@@ -40,7 +40,8 @@ public class UseComposterGoal extends Goal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for using a &fComposter&7.");
+        description.add("&7Awarded for using");
+        description.add("&7a &fComposter&7.");
         return description;
     }
 

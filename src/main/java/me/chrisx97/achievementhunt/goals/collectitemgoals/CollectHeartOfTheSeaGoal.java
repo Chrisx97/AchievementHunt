@@ -41,7 +41,8 @@ public class CollectHeartOfTheSeaGoal extends CollectItemGoal
     public List<String> GetDescription()
     {
         List<String> description = new ArrayList<>();
-        description.add("&7Awarded for collecting &3Heart of The Sea&7.");
+        description.add("&7Awarded for collecting");
+        description.add("&3Heart of The Sea&7.");
         return description;
     }
 

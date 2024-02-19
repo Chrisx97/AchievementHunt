@@ -52,7 +52,7 @@ public class CollectCakeGoal extends CollectItemGoal
     {
         List<String> description = new ArrayList<>();
         description.add("&7Awarded when a player has");
-        description.add("&6Cake &7in their inventory.");
+        description.add("&bCake &7in their inventory.");
         return description;
     }
 

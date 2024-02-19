@@ -3,12 +3,6 @@ version: '${project.version}'
 main: me.chrisx97.achievementhunt.AchievementHunt
 api-version: '1.20'
 commands:
-  start:
-    description: starts the game
-
-  stopgame:
-    description: stops the game
-
   goals:
     description: opens the goals GUI
 
