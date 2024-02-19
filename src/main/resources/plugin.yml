@@ -9,6 +9,9 @@ commands:
   stopgame:
     description: stops the game
 
+  goals:
+    description: opens the goals GUI
+
   achievementhunt:
-    description: opens the achievement gui
+    description: base command
     aliases: [ah, ahunt, hunt]

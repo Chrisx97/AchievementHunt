@@ -1,6 +1,7 @@
 package me.chrisx97.achievementhunt;
 
 import me.chrisx97.achievementhunt.commands.AchievementHuntCommand;
+import me.chrisx97.achievementhunt.commands.GoalsCommand;
 import me.chrisx97.achievementhunt.commands.StartCommand;
 import me.chrisx97.achievementhunt.commands.StopCommand;
 import me.chrisx97.achievementhunt.game.GameManager;
@@ -89,6 +90,7 @@ public final class AchievementHunt extends JavaPlugin
     {
         this.getCommand("Start").setExecutor(new StartCommand());
         this.getCommand("StopGame").setExecutor(new StopCommand());
+        this.getCommand("StopGame").setExecutor(new GoalsCommand());
         this.getCommand("AchievementHunt").setExecutor(new AchievementHuntCommand());
     }
 
