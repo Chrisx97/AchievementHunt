@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AchievementHunt:jar">
+    <output-path>$USER_HOME$/Desktop/Minecraft Servers/Paper Dev Server/plugins</output-path>
+    <root id="archive" name="AchievementHunt.jar">
+      <element id="module-output" name="AchievementHunt" />
+    </root>
+  </artifact>
+</component>

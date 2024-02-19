@@ -1,0 +1,82 @@
+package me.chrisx97.achievementhunt.goals.collectitemgoals;
+
+import me.chrisx97.achievementhunt.goals.base.CollectItemGoal;
+import me.chrisx97.achievementhunt.utils.ItemUtil;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CollectCakeGoal extends CollectItemGoal
+{
+    private Player whoClaimedGoal;
+    private ItemStack myItem;
+    private boolean isCompleted = false;
+
+    @Override
+    public ItemStack GetDisplayItem()
+    {
+        if (myItem == null)
+        {
+            myItem = ItemUtil.Instance.CreateGuiItem(Material.CAKE, GetName(), false, null, GetDescription());
+        }
+        if (isCompleted) {
+            myItem = ItemUtil.Instance.CreateGuiItem(Material.CAKE, GetName(), true, whoClaimedGoal, GetDescription());
+        }
+
+
+        return myItem;
+    }
+
+    @Override
+    public boolean HasCorrectItem(Material itemType)
+    {
+        if (itemType == Material.CAKE)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public String GetName()
+    {
+        return "The Lie";
+    }
+
+    @Override
+    public List<String> GetDescription()
+    {
+        List<String> description = new ArrayList<>();
+        description.add("&7Awarded when a player has");
+        description.add("&6Cake &7in their inventory.");
+        return description;
+    }
+
+    @Override
+    public boolean IsCompleted()
+    {
+        return isCompleted;
+    }
+
+    @Override
+    public void SetCompletion(boolean newState)
+    {
+        isCompleted = newState;
+    }
+
+    @Override
+    public Player WhoClaimedGoal()
+    {
+        return whoClaimedGoal;
+    }
+
+    @Override
+    public void SetWhoClaimedGoal(Player player)
+    {
+        whoClaimedGoal = player;
+    }
+}
