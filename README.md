@@ -14,20 +14,19 @@ When the game starts, 20 random goals are selected and added to the /goals GUI
 
 Current List of Goals:
 
-
-Harvest Sugar Cane, 
-
-Break a Diamond Ore, 
-
 Break an Iron Ore, 
-
-Mine a Mob Spawner, 
 
 Break Obsidian, 
 
+Break a Diamond Ore,
+
+Mine a Mob Spawner,
+
+Harvest Sugar Cane, 
+
 Breed Chickens, 
 
-Breed Cows, 
+Breed Cows,
 
 Collect Cake, 
 
@@ -35,9 +34,9 @@ Collect an Enchanted Golden Apple,
 
 Collect a Heart of The Sea, 
 
-Collect a full set of Diamond Tools, 
-
 Collect a full set of Golden Tools, 
+
+Collect a full set of Diamond Tools,
 
 Eat a Glow Berry, 
 
@@ -47,7 +46,13 @@ Hit an Iron Golem with a Rose,
 
 Milk a Cow, 
 
-Use a Composter,
+Use a Composter, 
+
+Kill a Skeleton with a Bone, 
+
+Kill a Zombie Villager, 
+
+Kill a Witch, 
 
 Die to a Cactus, 
 
