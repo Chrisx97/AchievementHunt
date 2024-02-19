@@ -7,7 +7,6 @@ import me.chrisx97.achievementhunt.goals.collectitemgoals.CollectCakeGoal;
 import me.chrisx97.achievementhunt.goals.EmptyHungerBarGoal;
 import me.chrisx97.achievementhunt.goals.WriteBookGoal;
 import me.chrisx97.achievementhunt.goals.base.EatGoal;
-import me.chrisx97.achievementhunt.utils.LoggerUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -11,7 +11,6 @@ import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 
@@ -68,19 +67,16 @@ public class AchievementGUI implements Listener
                 if (i <= 4)
                 {
                     indexOffset = i + 11;
-                    //menu.setItem(indexOffset, GameManager.GetInstance().GetActiveGoalList().get(i).GetDisplayItem());
                 }
 
                 if (i > 4 && i <= 9)
                 {
                     indexOffset = i + 15;
-                    //menu.setItem(indexOffset, GameManager.GetInstance().GetActiveGoalList().get(i).GetDisplayItem());
                 }
 
                 if (i > 9 && i <= 14)
                 {
                     indexOffset = i + 19;
-                    //menu.setItem(indexOffset, GameManager.GetInstance().GetActiveGoalList().get(i).GetDisplayItem());
                 }
 
                 if (i > 14 && i <= 19)
@@ -117,16 +113,6 @@ public class AchievementGUI implements Listener
         if (!e.getInventory().equals(menu)) return;
 
         e.setCancelled(true);
-
-        final ItemStack clickedItem = e.getCurrentItem();
-
-        // verify current item is not null
-        if (clickedItem == null || clickedItem.getType().isAir()) return;
-
-        final Player p = (Player) e.getWhoClicked();
-
-        // Using slots click is the best option for your inventory click's
-        p.sendMessage("You clicked at slot " + e.getRawSlot());
     }
 
     // Cancel dragging in our inventory

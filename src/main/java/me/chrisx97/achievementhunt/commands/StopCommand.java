@@ -15,7 +15,6 @@ public class StopCommand implements CommandExecutor
 
         if (commandSender.isOp())
         {
-            //LoggerUtil.Instance().Broadcast("&6Starting a Game");
             GameManager.GetInstance().SetWinner((Player) commandSender);
             GameManager.GetInstance().SetState(GameState.ENDING);
             return true;

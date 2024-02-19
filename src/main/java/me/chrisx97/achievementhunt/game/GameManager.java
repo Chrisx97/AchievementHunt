@@ -357,6 +357,5 @@ public class GameManager
     private Player GetPlayerFromUid(UUID uid) {
         return plugin.getServer().getPlayer(uid);
     }
-
 }
 
