@@ -1,6 +1,6 @@
 Thought it would be fun to try and recreate "Lockout" as a Spigot Plugin.
 
-Tested on Paper 1.20.4 b423
+1.20.4-R0.1-SNAPSHOT
 
 Commands
 
