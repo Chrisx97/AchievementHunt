@@ -1,6 +1,7 @@
 Thought it would be fun to try and recreate "Lockout" as a Spigot Plugin.
 
 Commands
+
 start - Starts a game. 
 stop - Forces the game to end early, winner is whoever ran the command.
 soals - Opens the goals GUI
