@@ -15,6 +15,8 @@ Commands:
 
 When the game starts, 20 random goals are selected and added to the /goals GUI
 
+1v1 format, first player to complete 10 goals wins.
+
 Current List of Goals:
 
 Break an Iron Ore, 
