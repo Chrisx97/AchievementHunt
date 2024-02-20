@@ -192,7 +192,7 @@ public class GameManager
                                     if (collectItemGoal.HasCorrectItem(itemStack.getType()))
                                     {
                                         GameManager.GetInstance().TryClaimGoal(player, goal);
-                                        break;
+                                        //break;
                                     }
                                 }
 
@@ -202,7 +202,7 @@ public class GameManager
                                     if (collectItemSetGoal.HasCorrectItems(player.getInventory()))
                                     {
                                         GameManager.GetInstance().TryClaimGoal(player, goal);
-                                        break;
+                                        //break;
                                     }
                                 }
                             }
@@ -229,7 +229,7 @@ public class GameManager
                     case 14:
                         SpawnFireworks();
                         LoggerUtil.Instance().Broadcast("&6GAME ENDING!");
-                        LoggerUtil.Instance().Broadcast("&cWinner: " + "&a" + winningPlayer.getName());
+                        LoggerUtil.Instance().Broadcast("&6Winner: " + "&a" + winningPlayer.getName());
                         break;
 
                     case 15:
