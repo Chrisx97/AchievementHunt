@@ -192,7 +192,6 @@ public class GameManager
                                     if (collectItemGoal.HasCorrectItem(itemStack.getType()))
                                     {
                                         GameManager.GetInstance().TryClaimGoal(player, goal);
-                                        //break;
                                     }
                                 }
 
@@ -202,7 +201,6 @@ public class GameManager
                                     if (collectItemSetGoal.HasCorrectItems(player.getInventory()))
                                     {
                                         GameManager.GetInstance().TryClaimGoal(player, goal);
-                                        //break;
                                     }
                                 }
                             }
@@ -228,6 +226,7 @@ public class GameManager
                     case 9:
                     case 14:
                         SpawnFireworks();
+                        DoThunder();
                         LoggerUtil.Instance().Broadcast("&6GAME ENDING!");
                         LoggerUtil.Instance().Broadcast("&6Winner: " + "&a" + winningPlayer.getName());
                         break;
@@ -241,12 +240,14 @@ public class GameManager
 
                     case 19:
                         SpawnFireworks();
+                        DoThunder();
                         LoggerUtil.Instance().Broadcast("&cServer Shutdown in " + (20 - timer) + "...");
                         break;
 
                     case 20:
                         LoggerUtil.Instance().Broadcast("&cServer shutting down.");
                         cancel();
+                        ResetPlayers(true);
                         Bukkit.shutdown();
                 }
                 timer++;
