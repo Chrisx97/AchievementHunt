@@ -33,15 +33,23 @@ Breed Chickens,
 
 Breed Cows,
 
+Catch an Axolotl,
+
+Catch Tropical Fish,
+
+Catch Cod,
+
+Catch Salmon,
+
+Collect a full set of Golden Tools,
+
+Collect a full set of Diamond Tools,
+
 Collect Cake, 
 
 Collect an Enchanted Golden Apple, 
 
 Collect a Heart of The Sea, 
-
-Collect a full set of Golden Tools, 
-
-Collect a full set of Diamond Tools,
 
 Eat a Glow Berry, 
 
