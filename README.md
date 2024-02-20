@@ -15,9 +15,13 @@ Commands:
 
 When the game starts, 20 random goals are selected and added to the /goals GUI
 
-1v1 format, first player to complete 10 goals wins.
+Everyone is teleported to spawn, healed, and given a "Player Tracker" compass that 
+automatically updates to point to the nearest player, you can also right-click 
+with it to open the Goals GUI.
 
-Current List of Goals:
+The game takes place in 1v1 format, first player to complete 10 goals wins.
+
+Current List of Possible Goals:
 
 Break an Iron Ore, 
 
