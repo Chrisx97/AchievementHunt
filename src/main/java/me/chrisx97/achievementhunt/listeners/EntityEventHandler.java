@@ -51,6 +51,7 @@ public class EntityEventHandler implements Listener
                     {
                         //try to claim the goal
                         GameManager.GetInstance().TryClaimGoal(event.getPlayer(), goal);
+                        break;
                     }
                 }
             }
@@ -77,6 +78,7 @@ public class EntityEventHandler implements Listener
                         if (killGoal.UsedCorrectItem(player.getInventory().getItemInMainHand().getType()))
                         {
                             GameManager.GetInstance().TryClaimGoal(player, goal);
+                            break;
                         }
                     }
                 }

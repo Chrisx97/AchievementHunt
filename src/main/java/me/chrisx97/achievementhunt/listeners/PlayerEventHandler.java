@@ -162,6 +162,7 @@ public class PlayerEventHandler implements Listener
                             if (goal instanceof OpponentTakesFallDamageGoal)
                             {
                                 GameManager.GetInstance().TryClaimGoal(player, goal);
+                                break;
                             }
                         }
                     }
