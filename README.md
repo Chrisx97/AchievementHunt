@@ -47,9 +47,15 @@ Collect a full set of Diamond Tools,
 
 Collect Cake, 
 
-Collect an Enchanted Golden Apple, 
+Find an Enchanted Golden Apple, 
 
-Collect a Heart of The Sea, 
+Find a Heart of The Sea, 
+
+Collect a Honey Bottle,
+
+Collect a Honeycomb,
+
+Collect a Slime block,
 
 Eat a Glow Berry, 
 
@@ -61,11 +67,11 @@ Milk a Cow,
 
 Use a Composter, 
 
-Kill a Skeleton with a Bone, 
+Slay a Skeleton with a Bone, 
 
 Kill a Zombie Villager, 
 
-Kill a Witch, 
+Take down a Witch, 
 
 Die to a Cactus, 
 
@@ -73,4 +79,6 @@ Empty your hunger bar,
 
 Catch a fish with a rod, 
 
-Write a book.
+Write a book,
+
+Opponent takes Fall Damage.

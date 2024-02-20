@@ -149,10 +149,17 @@ public class GameManager
                 LoggerUtil.Instance().Broadcast("&aPlayer &b" + player.getName() + " &ahas completed &6" + goal.GetName());
                 if (goalsCompleted == 1)
                 {
-                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), player.getName() + " has completed " + goalsCompleted + " goal", 20, 80, 20);
-                } else
+                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), HexFormat.format("&a" + player.getName() + " &fhas completed " + goalsCompleted + " goal"), 20, 80, 20);
+                }
+
+                if (goalsCompleted == 5)
                 {
-                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), player.getName() + " has completed " + goalsCompleted + " goals", 20, 80, 20);
+                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), HexFormat.format("&a" + player.getName() + " &fhas completed " + goalsCompleted + " goals"), 20, 80, 20);
+                }
+
+                if (goalsCompleted == 9)
+                {
+                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), HexFormat.format("&a" + player.getName() + " &fhas completed " + goalsCompleted + " goals"), 20, 80, 20);
                 }
             }
         }
@@ -357,6 +364,11 @@ public class GameManager
 
     private Player GetPlayerFromUid(UUID uid) {
         return plugin.getServer().getPlayer(uid);
+    }
+
+    public int GetPlayersInGame()
+    {
+        return playerData.size();
     }
 }
 

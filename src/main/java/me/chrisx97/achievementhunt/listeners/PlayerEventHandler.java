@@ -1,5 +1,6 @@
 package me.chrisx97.achievementhunt.listeners;
 
+import me.chrisx97.achievementhunt.goals.OpponentTakesFallDamageGoal;
 import me.chrisx97.achievementhunt.goals.base.BucketFishingGoal;
 import me.chrisx97.achievementhunt.goals.base.Goal;
 import me.chrisx97.achievementhunt.game.GameManager;
@@ -141,6 +142,30 @@ public class PlayerEventHandler implements Listener
             {
                 GameManager.GetInstance().TryClaimGoal(event.getPlayer(), goal);
                 break;
+            }
+        }
+    }
+
+    @EventHandler
+    public void OnPlayerDamaged(EntityDamageEvent event)
+    {
+        if (event.getEntity() instanceof Player)
+        {
+            Player player = (Player) event.getEntity();
+            if (player.getLastDamageCause()!= null) {
+                if (player.getLastDamageCause().getCause() == EntityDamageEvent.DamageCause.FALL)
+                {
+                    if (GameManager.GetInstance().GetPlayersInGame() > 1)
+                    {
+                        for (Goal goal : GameManager.GetInstance().GetActiveGoalList())
+                        {
+                            if (goal instanceof OpponentTakesFallDamageGoal)
+                            {
+                                GameManager.GetInstance().TryClaimGoal(player, goal);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

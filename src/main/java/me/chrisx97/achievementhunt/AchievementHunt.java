@@ -11,9 +11,7 @@ import me.chrisx97.achievementhunt.goals.bucketfishinggoals.CatchAxolotlGoal;
 import me.chrisx97.achievementhunt.goals.bucketfishinggoals.CatchCodGoal;
 import me.chrisx97.achievementhunt.goals.bucketfishinggoals.CatchSalmonGoal;
 import me.chrisx97.achievementhunt.goals.bucketfishinggoals.CatchTropicalFishGoal;
-import me.chrisx97.achievementhunt.goals.collectitemgoals.CollectCakeGoal;
-import me.chrisx97.achievementhunt.goals.collectitemgoals.CollectEnchantedAppleGoal;
-import me.chrisx97.achievementhunt.goals.collectitemgoals.CollectHeartOfTheSeaGoal;
+import me.chrisx97.achievementhunt.goals.collectitemgoals.*;
 import me.chrisx97.achievementhunt.goals.collectitemsetgoals.CollectDiamondToolsGoal;
 import me.chrisx97.achievementhunt.goals.collectitemsetgoals.CollectGoldToolsGoal;
 import me.chrisx97.achievementhunt.goals.eatgoals.EatGlowberryGoal;
@@ -68,6 +66,9 @@ public final class AchievementHunt extends JavaPlugin
         GameManager.GetInstance().AddGoal(new CollectCakeGoal());
         GameManager.GetInstance().AddGoal(new CollectEnchantedAppleGoal());
         GameManager.GetInstance().AddGoal(new CollectHeartOfTheSeaGoal());
+        GameManager.GetInstance().AddGoal(new CollectHoneyBottleGoal());
+        GameManager.GetInstance().AddGoal(new CollectHoneycombGoal());
+        GameManager.GetInstance().AddGoal(new CollectSlimeBlockGoal());
 
         GameManager.GetInstance().AddGoal(new EatGlowberryGoal());
         GameManager.GetInstance().AddGoal(new EatRabbitStewGoal());
@@ -85,6 +86,7 @@ public final class AchievementHunt extends JavaPlugin
         GameManager.GetInstance().AddGoal(new EmptyHungerBarGoal());
         GameManager.GetInstance().AddGoal(new FishingGoal());
         GameManager.GetInstance().AddGoal(new WriteBookGoal());
+        GameManager.GetInstance().AddGoal(new OpponentTakesFallDamageGoal());
     }
 
     private void RegisterListeners()
