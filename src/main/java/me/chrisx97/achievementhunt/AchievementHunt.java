@@ -97,7 +97,7 @@ public final class AchievementHunt extends JavaPlugin
         GameManager.GetInstance().AddGoal(new EmptyHungerBarGoal());
         GameManager.GetInstance().AddGoal(new FishingGoal());
         GameManager.GetInstance().AddGoal(new WriteBookGoal());
-        //GameManager.GetInstance().AddGoal(new OpponentTakesFallDamageGoal());
+        GameManager.GetInstance().AddGoal(new OpponentTakesFallDamageGoal());
     }
 
     private void RegisterListeners()
