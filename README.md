@@ -45,9 +45,9 @@ Catch Cod,
 
 Catch Salmon,
 
-Collect a full set of Golden Tools,
+Collect a Full set of Golden Tools,
 
-Collect a full set of Diamond Tools,
+Collect a Full set of Diamond Tools,
 
 Collect Cake, 
 
@@ -59,7 +59,17 @@ Collect a Honey Bottle,
 
 Collect a Honeycomb,
 
-Collect a Slime block,
+Collect Orange Wool,
+
+Collect Pink Wool,
+
+Collect a Slime Block,
+
+Collect Black Stained Glass,
+
+Collect Blue Stained Glass,
+
+Collect Lime Stained Glass,
 
 Eat a Glow Berry, 
 
@@ -77,12 +87,14 @@ Kill a Zombie Villager,
 
 Take down a Witch, 
 
+Obtain the Absorption Potion Effect
+
 Die to a Cactus, 
 
-Empty your hunger bar, 
+Empty your Hunger Bar, 
 
-Catch a fish with a rod, 
+Catch a Fish with a Rod, 
 
-Write a book,
+Write a Book,
 
 Opponent takes Fall Damage.

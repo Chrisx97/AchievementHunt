@@ -3,6 +3,7 @@ package me.chrisx97.achievementhunt.game;
 import me.chrisx97.achievementhunt.goals.base.CollectItemSetGoal;
 import me.chrisx97.achievementhunt.goals.base.Goal;
 import me.chrisx97.achievementhunt.goals.base.CollectItemGoal;
+import me.chrisx97.achievementhunt.goals.base.PotionEffectGoal;
 import me.chrisx97.achievementhunt.utils.AchievementGUI;
 import me.chrisx97.achievementhunt.utils.HexFormat;
 import me.chrisx97.achievementhunt.utils.ItemUtil;
@@ -19,7 +20,6 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
-import java.util.logging.Logger;
 
 public class GameManager
 {
@@ -30,6 +30,7 @@ public class GameManager
     private Player winningPlayer = null;
     private List<Goal> goalList = new ArrayList<>();
     private List<Goal> activeGoalList = new ArrayList<>();
+    private List<Player> playersInGame;
     private final Dictionary<Player, List<Goal>> playerData = new Hashtable<>();
 
 
@@ -79,6 +80,7 @@ public class GameManager
         ResetPlayers(true);
         DoThunder();
         StartMonitorInventoryTask();
+        StartMonitorPotionEffectsTask();
         StartCompassTrackerTask();
         LoggerUtil.Instance().Broadcast("&6Match is starting!");
         LoggerUtil.Instance().Broadcast("&cFirst to complete &a10 goals &cwins!");
@@ -149,31 +151,63 @@ public class GameManager
                 LoggerUtil.Instance().Broadcast("&aPlayer &b" + player.getName() + " &ahas completed &6" + goal.GetName());
                 if (goalsCompleted == 1)
                 {
-                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), HexFormat.format("&a" + player.getName() + " &fhas completed " + goalsCompleted + " goal"), 20, 80, 20);
+                    ShowTitleToAll("&6" + goal.GetName(), "&a" + player.getName() + " &fhas completed " + goalsCompleted + " goal", 20, 80, 20);
                 }
 
                 if (goalsCompleted == 5)
                 {
-                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), HexFormat.format("&a" + player.getName() + " &fhas completed " + goalsCompleted + " goals"), 20, 80, 20);
+                    ShowTitleToAll("&6" + goal.GetName(), "&a" + player.getName() + " &fhas completed " + goalsCompleted + " goals", 20, 80, 20);
                 }
 
                 if (goalsCompleted == 9)
                 {
-                    player.sendTitle(HexFormat.format("&6" + goal.GetName()), HexFormat.format("&a" + player.getName() + " &fhas completed " + goalsCompleted + " goals"), 20, 80, 20);
+                    ShowTitleToAll("&6" + goal.GetName(), "&a" + player.getName() + " &fhas completed " + goalsCompleted + " goals", 20, 80, 20);
                 }
             }
         }
         return true;
     }
 
+    private void ShowTitleToAll(String title, String subTitle, int fadeIn, int holdTime, int fadeOut)
+    {
+        Bukkit.getServer().getOnlinePlayers().forEach(player -> {
+            player.sendTitle(HexFormat.format(title), HexFormat.format(subTitle), fadeIn, holdTime, fadeOut);
+        });
+    }
+
     public static List<Goal> pickNRandom(List<Goal> lst, int n) {
         List<Goal> copy = new ArrayList<Goal>(lst);
         Collections.shuffle(copy);
         return n > copy.size() ? copy.subList(0, copy.size()) : copy.subList(0, n);
-
     }
 
 
+    public void StartMonitorPotionEffectsTask()
+    {
+        new BukkitRunnable()
+        {
+            @Override
+            public void run()
+            {
+                plugin.getServer().getOnlinePlayers().forEach(player -> {
+                    for (PotionEffect effect : player.getActivePotionEffects())
+                    {
+                        for (Goal goal : GetActiveGoalList())
+                        {
+                            if (goal instanceof PotionEffectGoal)
+                            {
+                                PotionEffectGoal potionEffectGoal = (PotionEffectGoal) goal;
+                                if (potionEffectGoal.CorrectPotionEffect(effect.getType()))
+                                {
+                                    TryClaimGoal(player, goal);
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }.runTaskTimer(plugin, 0, 60);
+    }
     public void StartMonitorInventoryTask()
     {
         new BukkitRunnable() {
@@ -367,9 +401,25 @@ public class GameManager
         return plugin.getServer().getPlayer(uid);
     }
 
-    public int GetPlayersInGame()
+    public int PlayersInGameCount()
     {
         return playerData.size();
+    }
+
+    public List<Player> GetPlayersInGame()
+    {
+        if (playersInGame == null)
+        {
+            Enumeration<Player> enumeration = playerData.keys();
+            for (int i = 0; i < 2; i++)
+            {
+                if (enumeration.hasMoreElements())
+                {
+                    playersInGame.add(enumeration.nextElement());
+                }
+            }
+        }
+        return playersInGame;
     }
 }
 

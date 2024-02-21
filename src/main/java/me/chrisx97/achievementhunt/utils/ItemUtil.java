@@ -201,7 +201,7 @@ public class ItemUtil
         }
     }
 
-        public boolean IsWeirdItem(Material mat) {
+    public boolean IsWeirdItem(Material mat) {
             switch (mat) {
                 case SPAWNER:
                 case GOLDEN_HOE:

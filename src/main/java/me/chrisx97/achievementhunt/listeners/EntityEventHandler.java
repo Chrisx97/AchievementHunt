@@ -1,5 +1,6 @@
 package me.chrisx97.achievementhunt.listeners;
 
+import me.chrisx97.achievementhunt.game.GameState;
 import me.chrisx97.achievementhunt.goals.base.Goal;
 import me.chrisx97.achievementhunt.game.GameManager;
 import me.chrisx97.achievementhunt.goals.base.BreedGoal;
@@ -30,6 +31,7 @@ public class EntityEventHandler implements Listener
     @EventHandler
     public void OnEntityInteract(PlayerInteractEntityEvent event)
     {
+        if (GameManager.GetInstance().GetState() != GameState.ACTIVE) return;
         //Only checking main hand
         if (event.getHand() != EquipmentSlot.HAND) return;
 
@@ -64,6 +66,7 @@ public class EntityEventHandler implements Listener
     @EventHandler
     public void OnEntityDeath(EntityDeathEvent event)
     {
+        if (GameManager.GetInstance().GetState() != GameState.ACTIVE) return;
         if (event.getEntity().getKiller() != null)
         {
             Player player = event.getEntity().getKiller();
@@ -91,6 +94,7 @@ public class EntityEventHandler implements Listener
     @EventHandler
     public void OnHitEntity(EntityDamageByEntityEvent event)
     {
+        if (GameManager.GetInstance().GetState() != GameState.ACTIVE) return;
         Entity attacker = event.getDamager();
         Entity target = event.getEntity();
 
@@ -119,6 +123,7 @@ public class EntityEventHandler implements Listener
     @EventHandler
     public void OnBreedEvent(EntityBreedEvent event)
     {
+        if (GameManager.GetInstance().GetState() != GameState.ACTIVE) return;
         if (event.getBreeder() instanceof Player)
         {
             Player player = (Player) event.getBreeder();

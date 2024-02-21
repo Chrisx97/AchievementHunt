@@ -4,6 +4,7 @@ import me.chrisx97.achievementhunt.commands.AchievementHuntCommand;
 import me.chrisx97.achievementhunt.commands.GoalsCommand;
 import me.chrisx97.achievementhunt.game.GameManager;
 import me.chrisx97.achievementhunt.goals.*;
+import me.chrisx97.achievementhunt.goals.base.PotionEffectGoal;
 import me.chrisx97.achievementhunt.goals.blockbreakgoals.*;
 import me.chrisx97.achievementhunt.goals.breedgoals.BreedChickensGoal;
 import me.chrisx97.achievementhunt.goals.breedgoals.BreedCowsGoal;
@@ -23,13 +24,16 @@ import me.chrisx97.achievementhunt.goals.killgoals.KillSkeletonWithBoneGoal;
 import me.chrisx97.achievementhunt.goals.killgoals.KillSnowGolemGoal;
 import me.chrisx97.achievementhunt.goals.killgoals.KillWitchGoal;
 import me.chrisx97.achievementhunt.goals.killgoals.KillZombieVillagerGoal;
+import me.chrisx97.achievementhunt.goals.potioneffectgoals.AbsorptionEffectGoal;
 import me.chrisx97.achievementhunt.listeners.BlockEventHandler;
 import me.chrisx97.achievementhunt.listeners.EntityEventHandler;
 import me.chrisx97.achievementhunt.listeners.FishingHandler;
 import me.chrisx97.achievementhunt.listeners.PlayerEventHandler;
 import me.chrisx97.achievementhunt.utils.AchievementGUI;
 import me.chrisx97.achievementhunt.utils.LoggerUtil;
+import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffectType;
 
 public final class AchievementHunt extends JavaPlugin
 {
@@ -69,6 +73,11 @@ public final class AchievementHunt extends JavaPlugin
         GameManager.GetInstance().AddGoal(new CollectHoneyBottleGoal());
         GameManager.GetInstance().AddGoal(new CollectHoneycombGoal());
         GameManager.GetInstance().AddGoal(new CollectSlimeBlockGoal());
+        GameManager.GetInstance().AddGoal(new CollectStainedGlassBlackGoal());
+        GameManager.GetInstance().AddGoal(new CollectStainedGlassBlueGoal());
+        GameManager.GetInstance().AddGoal(new CollectStainedGlassLimeGoal());
+        GameManager.GetInstance().AddGoal(new CollectOrangeWoolGoal());
+        GameManager.GetInstance().AddGoal(new CollectPinkWoolGoal());
 
         GameManager.GetInstance().AddGoal(new EatGlowberryGoal());
         GameManager.GetInstance().AddGoal(new EatRabbitStewGoal());
@@ -82,11 +91,13 @@ public final class AchievementHunt extends JavaPlugin
         GameManager.GetInstance().AddGoal(new KillZombieVillagerGoal());
         GameManager.GetInstance().AddGoal(new KillWitchGoal());
 
+        GameManager.GetInstance().AddGoal(new AbsorptionEffectGoal());
+
         GameManager.GetInstance().AddGoal(new DieToCactusGoal());
         GameManager.GetInstance().AddGoal(new EmptyHungerBarGoal());
         GameManager.GetInstance().AddGoal(new FishingGoal());
         GameManager.GetInstance().AddGoal(new WriteBookGoal());
-        GameManager.GetInstance().AddGoal(new OpponentTakesFallDamageGoal());
+        //GameManager.GetInstance().AddGoal(new OpponentTakesFallDamageGoal());
     }
 
     private void RegisterListeners()

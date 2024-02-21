@@ -17,24 +17,22 @@ public class BlockEventHandler implements Listener
     @EventHandler
     public void OnBlockBreak(BlockBreakEvent event)
     {
+        if (GameManager.GetInstance().GetState() != GameState.ACTIVE) return;
         Player player = event.getPlayer();
         Material blockType = event.getBlock().getType();
 
-        if (GameManager.GetInstance().GetState() == GameState.ACTIVE)
+        List<Goal> goalList = GameManager.GetInstance().GetActiveGoalList();
+
+        for (Goal goal : goalList)
         {
-            List<Goal> goalList = GameManager.GetInstance().GetActiveGoalList();
-
-            for (Goal goal : goalList)
+            if (goal instanceof BlockCollectGoal)
             {
-                if (goal instanceof BlockCollectGoal)
-                {
-                    BlockCollectGoal blockGoal = (BlockCollectGoal) goal;
+                BlockCollectGoal blockGoal = (BlockCollectGoal) goal;
 
-                    if (blockGoal.HarvestedCorrectBlock(blockType))
-                    {
-                        GameManager.GetInstance().TryClaimGoal(player, blockGoal);
-                        break;
-                    }
+                if (blockGoal.HarvestedCorrectBlock(blockType))
+                {
+                    GameManager.GetInstance().TryClaimGoal(player, blockGoal);
+                    break;
                 }
             }
         }
