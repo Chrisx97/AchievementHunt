@@ -23,15 +23,17 @@ import java.util.*;
 
 public class GameManager
 {
-    private static GameManager instance = new GameManager();
+    private static final GameManager instance = new GameManager();
     private Plugin plugin;
     private GameState currentState = GameState.WAITING;
 
     private Player winningPlayer = null;
-    private List<Goal> goalList = new ArrayList<>();
+    private final List<Goal> goalList = new ArrayList<>();
     private List<Goal> activeGoalList = new ArrayList<>();
     private List<Player> playersInGame;
     private final Dictionary<Player, List<Goal>> playerData = new Hashtable<>();
+
+    private int goalsToWin = 10;
 
 
     public void AddGoal(Goal goal)
@@ -73,6 +75,11 @@ public class GameManager
         }
     }
 
+    public void SetLightningRound()
+    {
+        goalsToWin = 5;
+    }
+
     private void StartGame()
     {
         activeGoalList = pickNRandom(GetGoalList(), 20);
@@ -83,7 +90,7 @@ public class GameManager
         StartMonitorPotionEffectsTask();
         StartCompassTrackerTask();
         LoggerUtil.Instance().Broadcast("&6Match is starting!");
-        LoggerUtil.Instance().Broadcast("&cFirst to complete &a10 goals &cwins!");
+        LoggerUtil.Instance().Broadcast("&cFirst to complete &a" + goalsToWin + " goals &cwins!");
         AchievementGUI.InitializeItems();
         for (Player player : plugin.getServer().getOnlinePlayers())
         {
@@ -136,7 +143,7 @@ public class GameManager
             {
                 playerGoals.add(goal);
                 int goalsCompleted = playerGoals.size();
-                if (goalsCompleted >= 10)
+                if (goalsCompleted >= goalsToWin)
                 {
                     winningPlayer = player;
                     SetState(GameState.ENDING);

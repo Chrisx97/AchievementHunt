@@ -16,12 +16,9 @@ public class AchievementHuntCommand implements CommandExecutor
         Player player = (Player) sender;
         if (player != null)
         {
-            if (args.length == 0)
-            {
-                player.sendMessage("Usage: /achievementhunt start | stop | goals");
-            }
 
-            if (args.length == 1) {
+            if (args.length == 1)
+            {
                 if (args[0].equalsIgnoreCase("start"))
                 {
                     if (!player.isOp()) return false;
@@ -45,7 +42,30 @@ public class AchievementHuntCommand implements CommandExecutor
                     AchievementGUI.OpenGUI(player);
                 }
             }
+
+            if (args.length == 2)
+            {
+                if (args[0].equalsIgnoreCase("start"))
+                {
+                    if (!player.isOp()) return false;
+
+                    if (args[1].equalsIgnoreCase("normal"))
+                    {
+                        GameManager.GetInstance().SetState(GameState.ACTIVE);
+                        return true;
+                    }
+
+                    if (args[1].equalsIgnoreCase("lightning"))
+                    {
+                        GameManager.GetInstance().SetLightningRound();
+                        GameManager.GetInstance().SetState(GameState.ACTIVE);
+                        return true;
+                    }
+                }
+            }
         }
+
+        player.sendMessage("Usage: /achievementhunt start (normal | lightning) | stop | goals");
         return false;
     }
 }
